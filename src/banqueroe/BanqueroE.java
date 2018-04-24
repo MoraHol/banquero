@@ -21,7 +21,7 @@ public class BanqueroE {
         // TODO code application logic here
         String cadenaAsignados = "";
         String cadenaMaximos = "";
-        String cadena="";
+        String cadena = "";
         List<Proceso> asignados = creaAsignados();
         List<Proceso> necesarios = creaNecesarios();
         Disponibles disponibles = creaDisponibles();
@@ -35,10 +35,11 @@ public class BanqueroE {
             cadena += cadenaAsignados + "\t\t" + cadenaMaximos + "\n";
         }
         System.out.println("Asignados \t Maximos ");
-        System.out.println(cadena);
+        System.out.print(cadena);
         System.out.println("Recursos Disponibles: ");
-        System.out.println(disponibles.getDisponibles());
-        Comprobaciones.devuelveLista(asignados, necesarios, disponibles);
+        System.out.println(disponibles.getDisponibles() + "\n");
+        Comprobaciones algoritmo = new Comprobaciones(asignados, necesarios, disponibles);
+        Comprobaciones.devuelveLista();
     }
 
     public static List<Proceso> creaAsignados() {
