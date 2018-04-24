@@ -16,12 +16,28 @@ public class BanqueroE {
 
     /**
      * @param args the command line arguments
-     */ 
+     */
     public static void main(String[] args) {
         // TODO code application logic here
+        String cadenaAsignados = "";
+        String cadenaMaximos = "";
+        String cadena="";
         List<Proceso> asignados = creaAsignados();
         List<Proceso> necesarios = creaNecesarios();
         Disponibles disponibles = creaDisponibles();
+        for (int i = 0; i < asignados.size(); i++) {
+            cadenaAsignados = "|";
+            cadenaMaximos = "|";
+            for (int j = 0; j < asignados.get(i).getRecursosNecesarios().size(); j++) {
+                cadenaAsignados += asignados.get(i).getRecursosNecesarios().get(j) + "|";
+                cadenaMaximos += necesarios.get(i).getRecursosNecesarios().get(j) + "|";
+            }
+            cadena += cadenaAsignados + "\t\t" + cadenaMaximos + "\n";
+        }
+        System.out.println("Asignados \t Maximos ");
+        System.out.println(cadena);
+        System.out.println("Recursos Disponibles: ");
+        System.out.println(disponibles.getDisponibles());
         Comprobaciones.devuelveLista(asignados, necesarios, disponibles);
     }
 
