@@ -60,87 +60,29 @@ public class BanqueroE {
     }
 
     public static void creaAsignados() {
-        //recursosAsignados.add(new Proceso());
-        //recursosAsignados.add(new Proceso());
-        //recursosAsignados.add(new Proceso());
-        //recursosAsignados.add(new Proceso());
-        //recursosAsignados.get(0).getRecursosNecesarios().add(1);
-        //recursosAsignados.get(0).getRecursosNecesarios().add(0);
-        //recursosAsignados.get(0).getRecursosNecesarios().add(0);
-        //recursosAsignados.get(1).getRecursosNecesarios().add(6);
-        //recursosAsignados.get(1).getRecursosNecesarios().add(1);
-        //recursosAsignados.get(1).getRecursosNecesarios().add(2);
-        //recursosAsignados.get(2).getRecursosNecesarios().add(2);
-        //recursosAsignados.get(2).getRecursosNecesarios().add(1);
-        //recursosAsignados.get(2).getRecursosNecesarios().add(1);
-        //recursosAsignados.get(3).getRecursosNecesarios().add(0);
-        //recursosAsignados.get(3).getRecursosNecesarios().add(0);
-        //recursosAsignados.get(3).getRecursosNecesarios().add(2);
-        Scanner teclado = new Scanner(System.in);
         int numero = 0;
-        System.out.println("Introduzca los valores para la matriz de Asignados: ");
         for (int i = 0; i < asignados.size(); i++) {
             for (int j = 0; j < disponibles.getDisponibles().size(); j++) {
-                System.out.print("Posicion[" + i + "][" + j + "]: ");
-                numero = teclado.nextInt();
+                numero = random.nextInt(3);
                 asignados.get(i).getRecursosNecesarios().add(numero);
             }
         }
     }
 
     public static void creaNecesarios() {
-        Scanner teclado = new Scanner(System.in);
         int numero = 0;
-        System.out.println("Introduzca los valores para la matriz de Necesarios: ");
         for (int i = 0; i < necesarios.size(); i++) {
             for (int j = 0; j < disponibles.getDisponibles().size(); j++) {
-                System.out.print("Posicion[" + i + "][" + j + "]: ");
-                numero = teclado.nextInt();
+                numero = random.nextInt(5);
                 necesarios.get(i).getRecursosNecesarios().add(numero);
             }
         }
-        //recursosMaximos.add(new Proceso());
-        //recursosMaximos.add(new Proceso());
-        //recursosMaximos.add(new Proceso());
-        //recursosMaximos.add(new Proceso());
-        /*recursosMaximos.get(0).getRecursosNecesarios().add(3);
-        recursosMaximos.get(0).getRecursosNecesarios().add(2);
-        recursosMaximos.get(0).getRecursosNecesarios().add(2);
-        recursosMaximos.get(1).getRecursosNecesarios().add(6);
-        recursosMaximos.get(1).getRecursosNecesarios().add(1);
-        recursosMaximos.get(1).getRecursosNecesarios().add(3);
-        recursosMaximos.get(2).getRecursosNecesarios().add(3);
-        recursosMaximos.get(2).getRecursosNecesarios().add(1);
-        recursosMaximos.get(2).getRecursosNecesarios().add(4);
-        recursosMaximos.get(3).getRecursosNecesarios().add(4);
-        recursosMaximos.get(3).getRecursosNecesarios().add(2);
-        recursosMaximos.get(3).getRecursosNecesarios().add(2);*/
- /*for (int i = 0; i < recursosMaximos.size(); i++) {
-            for (int j = 0; j < disponible.getDisponibles().size(); j++) {
-                recursosMaximos.get(i).getRecursosNecesarios().add(random.nextInt(disponible.getDisponibles().get(j)));
-            }
-        }*/
     }
 
     public static void creaDisponibles() {
-        Scanner teclado = new Scanner(System.in);
-        //lista.getDisponibles().add(9);
-        //lista.getDisponibles().add(3);
-        //lista.getDisponibles().add(6);
-        //lista.getDisponibles().add(random.nextInt(7) + 3);
-        //lista.getDisponibles().add(random.nextInt(7) + 3);
-        //lista.getDisponibles().add(random.nextInt(7) + 3);
         for (int i = 0; i < disponibles.getDisponibles().size(); i++) {
-            System.out.print("Introduzca el valor del Recurso " + i+": ");
-            int valor = teclado.nextInt();
+            int valor = random.nextInt(5);
             disponibles.setDisponible(valor, i);
         }
-    }
-
-    public static Disponibles actualizarDisponibles(Disponibles lista) {
-        lista.getDisponibles().set(0, 0);
-        lista.getDisponibles().set(1, 1);
-        lista.getDisponibles().set(2, 1);
-        return lista;
     }
 }
