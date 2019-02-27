@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author juan_
+ * @author Alexis Holguin
  */
 public class BanqueroE {
 
